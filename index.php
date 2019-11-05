@@ -1,8 +1,8 @@
 <?php
 
 function get_server_cpu_usage(){
-    $load = sys_getloadavg();
-    return round($load[0]*100).'%';
+    $cpu = file_get_contents('/home/cputemp');
+    return round($cpu);
 }
 
 function get_server_memory_usage(){

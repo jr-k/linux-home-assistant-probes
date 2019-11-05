@@ -1,7 +1,7 @@
 <?php
 
 function get_server_cpu_usage(){
-    $cpu = file_get_contents('/home/cputemp');
+    $cpu = file_get_contents('/home/cpuload');
     return round($cpu);
 }
 

@@ -21,7 +21,10 @@ function get_server_storage_usage() {
     $df = (string)trim($df);
     $df_arr = explode("\n", $df);
     $storage = explode(" ", $df_arr[1]);
-    return $storage[12];
+    foreach($storage as $s) {
+        if (strpos($s,'%') !== FALSE) return  $s;
+    }
+    return '-';
 }
 
 function get_server_temperature() {

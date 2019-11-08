@@ -17,7 +17,7 @@ function get_server_memory_usage(){
 }
 
 function get_server_storage_usage() {
-    $df = shell_exec('df');
+    $df = shell_exec('df ./');
     $df = (string)trim($df);
     $df_arr = explode("\n", $df);
     $storage = explode(" ", $df_arr[1]);
